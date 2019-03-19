@@ -51,9 +51,12 @@ public class JavaConfigTest {
 		CompactDisc cd = appCtx.getBean(CompactDisc.class);
 		System.out.println(cd);
 		
+		cd = (CompactDisc)appCtx.getBean( "blueBlood" );
+		System.out.println(cd);
+		
 		CDPlayer cdPlayer = appCtx.getBean( CDPlayer.class );
 //		cdPlayer.play(cd);
-		cdPlayer.k(cd);
+		cdPlayer.insertCompactDisc(cd);
 
 		((ConfigurableApplicationContext) appCtx).close();
 	}
