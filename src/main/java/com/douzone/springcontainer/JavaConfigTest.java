@@ -7,6 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.douzone.springcontainer.soundsystem.CDPlayer;
 import com.douzone.springcontainer.soundsystem.CompactDisc;
 import com.douzone.springcontainer.user.User;
+import com.douzone.springcontainer.videosystem.DigitalVideoDisc;
 
 import config.user.AppConfig01;
 
@@ -14,7 +15,8 @@ public class JavaConfigTest {
 	public static void main(String[] args) {
 //		testJavaConfig01();
 //		testJavaConfig02();
-		testJavaConfig03();
+//		testJavaConfig03();
+		testJavaConfig04();
 	}
 
 	// Java Config 01
@@ -58,6 +60,19 @@ public class JavaConfigTest {
 //		cdPlayer.play(cd);
 		cdPlayer.insertCompactDisc(cd);
 
+		((ConfigurableApplicationContext) appCtx).close();
+	}
+	
+	// Java Config 04
+	// ComponentScan을 사용하지 않음
+	// Java Config Class의 메소드와 @Bean만 사용하는 설정.
+	public static void testJavaConfig04() {
+		ApplicationContext appCtx =
+				new AnnotationConfigApplicationContext("config.videosystem");
+
+		DigitalVideoDisc dvd = appCtx.getBean( DigitalVideoDisc.class ); // 이 인터페이스를 구현한 클래스를 달라는 의미.
+		dvd.play();
+		
 		((ConfigurableApplicationContext) appCtx).close();
 	}
 }
