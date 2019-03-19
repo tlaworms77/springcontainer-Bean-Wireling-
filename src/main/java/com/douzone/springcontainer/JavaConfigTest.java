@@ -7,6 +7,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.douzone.springcontainer.soundsystem.CDPlayer;
 import com.douzone.springcontainer.soundsystem.CompactDisc;
 import com.douzone.springcontainer.user.User;
+import com.douzone.springcontainer.videosystem.DVDPlayer;
 import com.douzone.springcontainer.videosystem.DigitalVideoDisc;
 
 import config.user.AppConfig01;
@@ -71,7 +72,14 @@ public class JavaConfigTest {
 				new AnnotationConfigApplicationContext("config.videosystem");
 
 		DigitalVideoDisc dvd = appCtx.getBean( DigitalVideoDisc.class ); // 이 인터페이스를 구현한 클래스를 달라는 의미.
-		dvd.play();
+		System.out.println( dvd );
+		
+	//2/////////////////////////////////////////
+//		DVDPlayer dvdPlayer = appCtx.getBean( DVDPlayer.class );
+//		dvdPlayer.play();
+		
+		DVDPlayer dvdPlayer = (DVDPlayer) appCtx.getBean( "dvdPlayer1" );
+		dvdPlayer.play();
 		
 		((ConfigurableApplicationContext) appCtx).close();
 	}
