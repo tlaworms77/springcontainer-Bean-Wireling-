@@ -44,7 +44,6 @@ public class JavaConfigTest {
 
 	// Java Config 03
 	// Component Scanning ( @Component, @Autowired )
-
 	private static void testJavaConfig03() {
 		ApplicationContext appCtx =
 				new AnnotationConfigApplicationContext("config.soundsystem");
