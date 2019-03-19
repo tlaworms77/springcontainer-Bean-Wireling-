@@ -41,7 +41,7 @@ public class CDPlayer {
 	// -> 생성자이름보다는 @Autowired라는 어노테이션이 중요하다는 의미!!
 	private CompactDisc cd;
 	@Autowired
-	public void k(CompactDisc cd) {
+	public void insertCompactDisc(CompactDisc cd) {
 		this.cd = cd;
 	}
 	
