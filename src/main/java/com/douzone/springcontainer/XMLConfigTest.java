@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.douzone.springcontainer.soundsystem.CDPlayer;
 import com.douzone.springcontainer.soundsystem.CompactDisc;
 import com.douzone.springcontainer.videosystem.Avengers;
+import com.douzone.springcontainer.videosystem.DVDPack;
 import com.douzone.springcontainer.videosystem.DVDPlayer;
 import com.douzone.springcontainer.videosystem.DigitalVideoDisc;
 
@@ -43,6 +44,9 @@ public class XMLConfigTest {
 		
 		dvd = (DigitalVideoDisc)appCtx.getBean( "digitalVideoDisc" );
 		System.out.println(dvd);
+		
+		DVDPack dvdPack = appCtx.getBean( DVDPack.class );
+		System.out.println(dvdPack);
 		
 		DVDPlayer dvdPlayer = appCtx.getBean( DVDPlayer.class );
 		dvdPlayer.play();
