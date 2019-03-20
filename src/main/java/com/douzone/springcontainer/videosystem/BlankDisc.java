@@ -42,12 +42,12 @@ public class BlankDisc implements DigitalVideoDisc {
 	@Override
 	public String toString() {
 		String decoration = 
-				"\n/////////////////////////////////////////\n" +
+				"\n==============================================================\n" +
 				"BlankDisc \n"
 				+ "Title : " + title + "\n"
 				+ "Studio : " + studio + "\n"
 				+ "Actors : \n\t" + actors + "\n" +
-				"/////////////////////////////////////////\n" ;
+				"==============================================================\n" ;
 		return decoration;
 	}
 

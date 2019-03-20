@@ -22,58 +22,58 @@
 	<!-- 03. 생성자를 통한 빈 주입 01 -->
 	<!-- <bean id="dvdPlyer" class="com.douzone.springcontainer.videosystem.DVDPlayer" 
 		> -->
-	<!-- <constructor-arg ref="digitalVideoDisc" /> -->
+	<!-- <constructor-arg ref="avengersInfinityWar" /> -->
 	<!-- </bean> -->
 
 	<!-- 04. 생성자를 통한 빈 주입 02 : c-namespace 의 argument 이름을 사용 -->
 
 	<!-- <bean id="dvdPlyer" class="com.douzone.springcontainer.videosystem.DVDPlayer" -->
-	<!-- c:dvd-ref="digitalVideoDisc" /> -->
+	<!-- c:dvd-ref="avengersInfinityWar" /> -->
 
 	<!-- 05. 생성자를 통한 빈 주입 03 : c-namespace 의 argument index 사용 -->
 	<!--<bean id="dvdPlyer" class="com.douzone.springcontainer.videosystem.DVDPlayer"
-			c:_0-ref="digitalVideoDisc" /> -->
+			c:_0-ref="avengersInfinityWar" /> -->
 
 	<!--06. 생성자를 통한 빈 주입 04 : c-namespace 의 argument가 하나인 경우 사용 -->
 	<!-- <bean id="dvdPlyer" class="com.douzone.springcontainer.videosystem.DVDPlayer"
-	c:_-ref="digitalVideoDisc" /> -->
+	c:_-ref="avengersInfinityWar" /> -->
 
 	<!-- 07. 생성자를 통한 빈 주입 05 : literal 값을 생성자에 주입01 (정통적인 방식) -->
-<!-- 	<bean id="digitalVideoDisc"
+<!-- 	<bean id="avengersInfinityWar"
 	 		class="com.douzone.springcontainer.videosystem.BlankDisc">
-	 		<constructor-arg name="title" value="Avengers Infinite War" />
+	 		<constructor-arg name="title" value="Avengers Infinity War" />
 	 		<constructor-arg name="studio" value="MARVEL" />
 		</bean> -->
 	
 	<!-- xmlns : xmlnamespace 를 설정해야 사용가능!! -->
 	<!-- xmlns:c="http://www.springframework.org/schema/c" -->
 	<!-- 08. 생성자를 통한 빈 주입 06 : literal 값을 생성자에 주입02 -->
-	<!--<bean id="digitalVideoDisc"
+	<!--<bean id="avengersInfinityWar"
  			class="com.douzone.springcontainer.videosystem.BlankDisc"
- 			c:title="Avengers Infinite War"
+ 			c:title="Avengers Infinity War"
  			c:studio="MARVEL" /> -->
 	
 	<!-- 09. 생성자를 통한 빈 주입 07 : literal 값을 생성자에 주입03(가장 많이 쓰는 방식) -->
-	<!--<bean id="digitalVideoDisc"
+	<!--<bean id="avengersInfinityWar"
 			class="com.douzone.springcontainer.videosystem.BlankDisc"
-			c:_0="Avengers Infinite War"
+			c:_0="Avengers Infinity War"
 			c:_1="MARVEL" /> -->
 	
 	<!-- 10. 생성자를 통한 빈 주입 08 : 와이어링 콜렉션 01-->
 	<!-- blankdisc에 actors추가햇음 -->
 	<!-- 순서대로 할 경우 name 밑 index 설정할 필요가 없고 -->
 	<!-- null를 세팅할 경우. <null> 하면 에러 나고 <null/>이라고 반드시 해야됨. -->
-	<!-- <bean id="digitalVideoDisc"
+	<!-- <bean id="avengersInfinityWar"
  		class="com.douzone.springcontainer.videosystem.BlankDisc">
- 		<constructor-arg value="Avengers Infinite War" />
+ 		<constructor-arg value="Avengers Infinity War" />
  		<constructor-arg value="MARVEL" />
  		<constructor-arg><null/></constructor-arg>
 	</bean> -->
 	
 	<!-- 11. 생성자를 통한 빈 주입 09 : 와이어링 콜렉션 02-->
-	<!-- <bean id="digitalVideoDisc"
+	<!-- <bean id="avengersInfinityWar"
  		class="com.douzone.springcontainer.videosystem.BlankDisc">
- 		<constructor-arg value="Avengers Infinite War" />
+ 		<constructor-arg value="Avengers Infinity War" />
  		<constructor-arg value="MARVEL" />
  		<constructor-arg>
  			<list>
@@ -98,7 +98,7 @@
  		<constructor-arg>
  			<list>
  				<ref bean="avengers" />
- 				<ref bean="digitalVideoDisc" />
+ 				<ref bean="avengersInfinityWar" />
  			</list>
  		</constructor-arg>
 	</bean>
@@ -106,20 +106,20 @@
 	<!--13.  프로퍼티를 통한 빈 주입 02-->
 	<!-- <bean id="dvdPlyer"
 		class="com.douzone.springcontainer.videosystem.DVDPlayer">
-		<property name="digitalVideoDisc" ref="digitalVideoDisc" />
+		<property name="digitalVideoDisc" ref="avengersInfinityWar" />
 	</bean> -->
 	
 	<!--14.  프로퍼티를 통한 빈 주입 03-->
 	<!-- xmlns:p="http://www.springframework.org/schema/p" 필요 -->
 	<bean id="dvdPlyer"
 		class="com.douzone.springcontainer.videosystem.DVDPlayer"
-		p:digitalVideoDisc-ref="digitalVideoDisc" />
+		p:digitalVideoDisc-ref="avengersInfinityWar" />
 		
 	<!-- 15.  프로퍼티를 통한 빈 주입 04 : 리터럴 값 주입01 -->
 	<!-- 기본 생성자가 없으면 에러가 나온다. (BlankDisc) -->
-	<!-- <bean id="digitalVideoDisc"
+	<!-- <bean id="avengersInfinityWar"
  		class="com.douzone.springcontainer.videosystem.BlankDisc">
- 		<property name="title" value="Avengers Infinite War" />
+ 		<property name="title" value="Avengers Infinity War" />
  		<property name="studio" value="MARVEL" />
  		<property name="actors">
  			<list>
@@ -132,9 +132,9 @@
 	
 	<!-- 16.  프로퍼티를 통한 빈 주입 05 : 리터럴 값 주입 02-->
 	<!-- 기본 생성자가 없으면 에러가 나온다. (BlankDisc) -->
-	<!-- <bean id="digitalVideoDisc"
+	<!-- <bean id="avengersInfinityWar"
  		class="com.douzone.springcontainer.videosystem.BlankDisc"
- 		p:title="Avengers Infinite War"
+ 		p:title="Avengers Infinity War"
  		p:studio="MARVEL">
  		<property name="actors">
  			<list>
@@ -155,9 +155,9 @@
 		<value>Scarlett Johansson</value>
 		<value>Chris Evans</value>
 	</util:list>
-	<bean id="digitalVideoDisc"
+	<bean id="avengersInfinityWar"
  		class="com.douzone.springcontainer.videosystem.BlankDisc"
- 		p:title="Avengers Infinite War"
+ 		p:title="Avengers Infinity War"
  		p:studio="MARVEL" 
  		p:actors-ref="actorList"/>
 	

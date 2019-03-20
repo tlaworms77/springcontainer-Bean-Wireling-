@@ -18,11 +18,11 @@ public class XMLConfigTest {
 		testXMLConfig02();
 	}
 
-	// XML Config01
+	// XML Config01 - 자동설정
 	// annotation config
 	public static void testXMLConfig01() {
 		ApplicationContext appCtx = 
-				new ClassPathXmlApplicationContext("config/soundsystem/CDPlayerConfig.xml");
+				new ClassPathXmlApplicationContext("config/soundsystem/VideoSystemConfig.xml");
 		CompactDisc cd = appCtx.getBean( CompactDisc.class );
 		
 		System.out.println(cd);
@@ -33,16 +33,16 @@ public class XMLConfigTest {
 		((ConfigurableApplicationContext) appCtx).close();
 	}
 
-	// XML Config02
+	// XML Config02 - 명시적설정
 	// bean config
 	public static void testXMLConfig02() {
 		ApplicationContext appCtx = 
-				new ClassPathXmlApplicationContext("config/videosystem/DVDPlayerConfig.xml");
+				new ClassPathXmlApplicationContext("config/videosystem/SoundSystemConfig.xml");
 		
 		DigitalVideoDisc dvd = appCtx.getBean(Avengers.class);
 		System.out.println(dvd);
 		
-		dvd = (DigitalVideoDisc)appCtx.getBean( "digitalVideoDisc" );
+		dvd = (DigitalVideoDisc)appCtx.getBean( "avengersInfinityWar" );
 		System.out.println(dvd);
 		
 		DVDPack dvdPack = appCtx.getBean( DVDPack.class );
